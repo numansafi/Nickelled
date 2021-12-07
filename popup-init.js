@@ -4,8 +4,10 @@ function init() {
     { message: "is_user_signed_in" },
     function (response) {
       if (response.message === "success" && response.payload) {
-        window.location.replace("./signin.html");
+        window.location.replace("./sign_out.html");
       }
     }
   );
 }
+
+init();
