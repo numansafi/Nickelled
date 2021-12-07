@@ -17,20 +17,19 @@ const uiConfig = {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       chrome.runtime.sendMessage({ message: "sign_in" }, function (response) {
         if (response.message === "success") {
-          window.location.replace("./welcome.html");
+          window.location.replace("./sign_out.html");
         }
       });
       return false;
     },
-    uiShown: function () {
-      document.getElementById("my_sign_in").style.display = "none";
-      document.getElementById("wrapper").style.pointerEvents = "none";
-    },
+    // uiShown: function () {
+    //   document.getElementById("my_sign_in").style.display = "none";
+    //   document.getElementById("wrapper").style.pointerEvents = "none";
+    // },
   },
   signInFlow: "popup",
   // signInSuccessUrl: '<url-to-redirect-to-on-success>',
   signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       customParameters: {
