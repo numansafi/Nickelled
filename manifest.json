@@ -17,5 +17,5 @@
     "default_popup": "./popup.html"
   },
   "permissions": ["tabs", "activeTab", "storage"],
-  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://apis.google.com https://www.gstatic.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://cdn.jsdelivr.net https://apis.google.com https://www.gstatic.com; object-src 'self'"
 }

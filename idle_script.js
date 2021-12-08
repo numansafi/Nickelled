@@ -1,8 +1,8 @@
 setIdleTimeout(10000, function () {
-  document.body.innerText = alert("Where did you go?");
+  Swal.fire("Any fool can use a computer");
 });
 
-function setIdleTimeout(millis, onIdle, onUnidle) {
+function setIdleTimeout(millis, onIdle) {
   let timeout = 0;
   startTimer();
 
@@ -19,7 +19,6 @@ function setIdleTimeout(millis, onIdle, onUnidle) {
 
   function onActivity() {
     if (timeout) clearTimeout(timeout);
-    else onUnidle();
     //since the mouse is moving, we turn off our event hooks for 1 second
     document.removeEventListener("mousemove", onActivity);
     document.removeEventListener("keypress", onActivity);
