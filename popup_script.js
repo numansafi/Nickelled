@@ -22,10 +22,6 @@ const uiConfig = {
       });
       return false;
     },
-    // uiShown: function () {
-    //   document.getElementById("my_sign_in").style.display = "none";
-    //   document.getElementById("wrapper").style.pointerEvents = "none";
-    // },
   },
   signInFlow: "popup",
   // signInSuccessUrl: '<url-to-redirect-to-on-success>',
@@ -37,10 +33,6 @@ const uiConfig = {
       },
     },
   ],
-  // Terms of service url.
-  // tosUrl: '<your-tos-url>',
-  // Privacy policy url.
-  // privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
 ui.start("#sign_in_options", uiConfig);
