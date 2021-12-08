@@ -1,8 +1,17 @@
 setIdleTimeout(10000, function () {
-  swal.fire({
-    title: "Wow!",
-    text: "Message!",
-    type: "success",
+  Swal.fire({
+    title: "Are you lost?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes",
+    cancelButtonText: "No",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const newURL = "https://help.nickelled.com";
+      chrome.tabs.create({ url: newURL });
+    }
   });
 });
 
