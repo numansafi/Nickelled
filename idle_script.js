@@ -1,5 +1,9 @@
 setIdleTimeout(10000, function () {
-  Swal.fire("Any fool can use a computer");
+  swal.fire({
+    title: "Wow!",
+    text: "Message!",
+    type: "success",
+  });
 });
 
 function setIdleTimeout(millis, onIdle) {
