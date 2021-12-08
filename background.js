@@ -1,4 +1,4 @@
-// Ensure user is not signed in
+// Track if user is signed in or not
 let user_signed_in = false;
 
 // function init() {
@@ -11,8 +11,6 @@ let user_signed_in = false;
 //   });
 // }
 
-// init();
-
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.message === "is_user_signed_in") {
     sendResponse({
@@ -21,11 +19,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     });
   } else if (request.message === "sign_out") {
     user_signed_in = false;
-    chrome.storage.local.set({ user_signed_in: true });
+    chrome.storage.local.set({ user_signed_in: false });
     sendResponse({ message: "success" });
   } else if (request.message === "sign_in") {
     user_signed_in = true;
-    chrome.storage.local.set({ user_signed_in: true });
+
     sendResponse({ message: "success" });
   }
 
