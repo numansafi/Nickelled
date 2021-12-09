@@ -1,4 +1,5 @@
 setIdleTimeout(10000, function () {
+  // Sweetalert fires if no activity for 10 seconds
   Swal.fire({
     title: "Are you lost?",
     icon: "warning",
