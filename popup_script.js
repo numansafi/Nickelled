@@ -17,9 +17,11 @@ const uiConfig = {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       chrome.runtime.sendMessage({ message: "sign_in" }, function (response) {
         if (response.message === "success") {
+          // if sign-in is successful show the sign-out page
           window.location.replace("./sign_out.html");
         }
       });
+      // chrome extension not able to redirect to other pages
       return false;
     },
   },
@@ -27,6 +29,7 @@ const uiConfig = {
   // signInSuccessUrl: '<url-to-redirect-to-on-success>',
   signInOptions: [
     {
+      // only need the google sign-in option
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       customParameters: {
         prompt: "select_account",
@@ -35,4 +38,5 @@ const uiConfig = {
   ],
 };
 
+// Google sign-in button
 ui.start("#sign_in_options", uiConfig);

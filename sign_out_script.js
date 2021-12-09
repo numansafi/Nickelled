@@ -1,4 +1,4 @@
-document.getElementById("name").innerHTML = "There";
+// document.getElementById("name").innerHTML = "There";
 
 document.querySelector("#sign_out").addEventListener("click", () => {
   chrome.runtime.sendMessage({ message: "sign_out" }, function (response) {
